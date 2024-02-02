@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>&lt;my-element> Demo</title>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../node_modules/lit/polyfill-support.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+nav-element {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.side-menu {
+  width: 250px;
+  color: black;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  padding-top: 60px;
+}
+
+.side-menu a {
+  padding: 16px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.side-menu a:hover {
+  background-color: #555;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.content > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+recent-box {
+  width: 100%;
+  max-width: 350px;
+  
+  margin-bottom: 20px;
+  padding: 10px;
+
+}
+
+feed-box {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+  </style>
+</head>
+
+<body>
+  <script type="module" src="../my-element.js"></script>
+  <script type="module" src="../elements/nav-element.js"></script>
+  <script type="module" src="../elements/recent-box.js"></script>
+  <script type="module" src="../elements/side-menu.js"></script>
+  <script type="module" src="../elements/feed-box.js"></script>
+
+  <nav-element></nav-element>
+  <div class="side-menu">
+    <side-menu></side-menu>
+  </div>
+  <div class="content">
+    <div>
+      <recent-box heading="Leapfrog guideline 1" space="Leapfrog" lastVisited="10th March, 2023"></recent-box>
+      <recent-box heading="Leapfrog guideline 2" space="Leapfrog" lastVisited="11th March, 2023"></recent-box>
+      <recent-box heading="Leapfrog guideline 3" space="Leapfrog" lastVisited="12th March, 2023"></recent-box>
+      <recent-box heading="Leapfrog guideline 4" space="Leapfrog" lastVisited="13th March, 2023"></recent-box>
+      <recent-box heading="Leapfrog guideline 5" space="Leapfrog" lastVisited="14th March, 2023"></recent-box>
+      <recent-box heading="Leapfrog guideline 6" space="Leapfrog" lastVisited="15th March, 2023"></recent-box>
+    </div>
+    <div class="main">
+      <feed-box author="Sudip Shrestha" action="edited" editNumber="5" time="5"
+        title="January Meeting notes with ChrisB"
+        details="This is a security & compliance meeting between Nepal and US side. Meeting goals: Key attendees: @Sudip Shrestha @Chris Bohnert @Subin Dangol @Chip Pulitzer Roadmap: Link">
+      </feed-box>
+      <feed-box author="Sudip Shrestha ko bhai" action="edited" editNumber="6" time="6"
+        title="March Meeting notes with ChrisC"
+        details="This is not a security & compliance meeting between Nepal and US side. Meeting goals: Key attendees: @Sudip Shrestha @Chris Bohnert @Subin Dangol @Chip Pulitzer Roadmap: Link">
+      </feed-box>
+      <feed-box author="Sudip Shrestha ko baini" action="edited" editNumber="7" time="9"
+        title="December Meeting notes with ChrisD"
+        details="This might be a security & compliance meeting between Nepal and US side. Meeting goals: Key attendees: @Sudip Shrestha @Chris Bohnert @Subin Dangol @Chip Pulitzer Roadmap: Link">
+      </feed-box>
+    </div>
+  </div>
+</body>
+
+</html>
